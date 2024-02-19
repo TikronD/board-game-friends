@@ -6,7 +6,7 @@ export default function Footer() {
       <h4>&copy; 2024</h4>
       <h5>
         Partner Project of <br></br>Ben Shreeve, Edward Stuart, Daniel Hahn and
-        Jimmy
+        Jimmy Kerr
       </h5>
     </div>
   );
