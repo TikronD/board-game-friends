@@ -1,0 +1,26 @@
+section {
+  background: #8a2be2;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  padding-bottom: 1rem;
+}
+
+nav {
+  color: whitesmoke;
+  display: flex;
+  gap: 5rem;
+}
+
+nav a {
+  color: whitesmoke;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: rgb(202, 197, 197);
+}
