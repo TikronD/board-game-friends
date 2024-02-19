@@ -17,7 +17,7 @@ export default function Header() {
           <Link href="./about">About</Link>
           <Link href="./collection">My Collection</Link>
           <Link href="./events">Events</Link>
-          <Link href="./about">Marketplace</Link>
+          <Link href="/marketplace">Marketplace</Link>
         </nav>
       </div>
     </section>
