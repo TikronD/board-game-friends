@@ -13,6 +13,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const { userId } = auth();
   return (
     <ClerkProvider>
       <html lang="en">
