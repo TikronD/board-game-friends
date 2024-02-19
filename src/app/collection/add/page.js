@@ -1,5 +1,3 @@
-import { parse } from "node-html-parser";
-
 export default async function AddCollection() {
     const res = await fetch(
         "https://api.geekdo.com/xmlapi/search?search=frika"

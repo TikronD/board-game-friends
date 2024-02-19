@@ -1,9 +1,10 @@
 export default function CollectionPage() {
-    return (
-        <div>
-            {CollectionPage.map(() => {
-                return "";
-            })}
-        </div>
-    );
+    // const collection =
+    // return (
+    //     <div>
+    //         {CollectionPage.map(() => {
+    //             return "";
+    //         })}
+    //     </div>
+    // );
 }
