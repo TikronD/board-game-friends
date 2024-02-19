@@ -1,0 +1,7 @@
+.newMarketplaceListingFormContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: bisque;
+  width: fit-content;
+  border: 3px solid black;
+}
