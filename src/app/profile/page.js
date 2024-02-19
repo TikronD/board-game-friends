@@ -1,21 +1,23 @@
 import { auth } from "@clerk/nextjs";
-import { db } from "@lib/db";
+import { db } from "../../lib/db";
 import { revalidatePath } from "next/cache";
 import Link from "next/link";
-import SubmitButton from "../components/SubmitButton";
+import SubmitButton from "../../component/SubmitButton";
 
 export default async function Profile() {
   const { userId } = auth();
 
-  const user =
-    await sql`SELECT * FROM profiles where clerk_user_id = ${userId}`;
+  const user = await db.query(
+    `SELECT * FROM profiles where clerk_user_id = $1`,
+    [userId]
+  );
 
   async function handleCreateUser(formData) {
     "use server";
     const username = formData.get("username");
     const location = formData.get("location");
 
-    await sql`INSERT INTO profiles (clerk_user_id, username, location) VALUES (${userId}, ${username}, ${location}) `;
+    await db`INSERT INTO profiles (clerk_user_id, username, location) VALUES (${userId}, ${username}, ${location}) `;
     revalidatePath("/profile");
   }
   return (

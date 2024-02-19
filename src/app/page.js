@@ -1,13 +1,16 @@
 import CssGrid from "@/component/CssGrid";
+import { db } from "../lib/db";
 import { auth } from "@clerk/nextjs";
-import { db } from db;
 import Link from "next/link";
 
 export default async function Home() {
   const { userId } = auth();
+  console.log(userId);
+  const user = await db.query(
+    `SELECT * FROM profiles where clerk_user_id = $1`,
+    [userId]
+  );
 
-  const user =
-    await sql`SELECT * FROM profiles where clerk_user_id = ${userId}`;
   return (
     <>
       {userId && user.rowCount === 0 && (
