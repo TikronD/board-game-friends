@@ -1,27 +1,13 @@
-import { db } from "@/lib/db";
-import { revalidatePath } from "next/cache";
-import "./newMarketplaceListingForm.css";
+import "@/component/newMarketplaceListingForm.css";
+import "@/component/NewListingFormBtn";
+import { handleSubmitListing } from "@/lib/actions";
 
-export default function NewMarketplaceListingForm() {
-  async function handleSubmitListing(formData) {
-    "use server";
-    console.log("hello there!");
-    const gameTitle = formData.get("game_title");
-    const price = formData.get("price");
-    const description = formData.get("description");
-    const condition = formData.get("condition");
-    const extras = formData.get("extras");
-
-    await db.query`INSERT INTO marketplace (game_title, price, description, condition, extras)
-    VALUES (${gameTitle}, ${price}, ${description}, ${condition}, ${extras})`;
-
-    revalidatePath("/marketplace");
-  }
+export default function NewMarketplaceListingForm({ profile_id }) {
+  const handleSubmitWithID = handleSubmitListing.bind(null, profile_id);
 
   return (
     <div className="newMarketplaceListingFormContainer">
-      <p>Add New Listing</p>
-      <form action={handleSubmitListing}>
+      <form action={handleSubmitWithID}>
         <input
           name="game_title"
           id="game_title"
@@ -39,8 +25,8 @@ export default function NewMarketplaceListingForm() {
         <textarea
           name="description"
           id="description"
-          cols="30"
-          rows="10"
+          cols="20"
+          rows="5"
           required
           placeholder="Description"
         ></textarea>
@@ -53,7 +39,7 @@ export default function NewMarketplaceListingForm() {
           <option value="true">Yes</option>
           <option value="false">No</option>
         </select>
-        <button type="submit">Submit</button>
+        <button type="submit">submit</button>
       </form>
     </div>
   );
