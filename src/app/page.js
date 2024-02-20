@@ -2,10 +2,12 @@ import CssGrid from "@/component/CssGrid";
 import { db } from "../lib/db";
 import { auth } from "@clerk/nextjs";
 import Link from "next/link";
+import Header from "@/component/Header";
+import Footer from "@/component/Footer";
+import Carousel from "@/component/Carousel";
 
 export default async function Home() {
   const { userId } = auth();
-  console.log(userId);
   const user = await db.query(
     `SELECT * FROM profiles where clerk_user_id = $1`,
     [userId]
@@ -13,6 +15,7 @@ export default async function Home() {
 
   return (
     <>
+      <Header />
       {userId && user.rowCount === 0 && (
         <div>
           <Link href="/profile">
@@ -26,6 +29,8 @@ export default async function Home() {
           <CssGrid />
         </div>
       )}
+      <Carousel />
+      <Footer />
     </>
   );
 }
