@@ -26,7 +26,7 @@ export default async function Home() {
       {userId && user.rowCount !== 0 && (
         <div>
           <Link href="/profile">My profile</Link>
-          <CssGrid />
+          {/* <CssGrid /> */}
         </div>
       )}
       <Carousel />
