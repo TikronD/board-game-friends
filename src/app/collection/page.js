@@ -1,14 +1,3 @@
-<<<<<<< Updated upstream
-export default function CollectionPage() {
-    // const collection =
-    // return (
-    //     <div>
-    //         {CollectionPage.map(() => {
-    //             return "";
-    //         })}
-    //     </div>
-    // );
-=======
 import GetGameCollection from "@/component/GetGameCollection";
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
@@ -37,5 +26,4 @@ export default async function CollectionPage() {
         await db.query(`DELETE FROM collection WHERE id= ${game.game_id}`);
         revalidatePath("./");
     }
->>>>>>> Stashed changes
 }

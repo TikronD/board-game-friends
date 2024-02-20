@@ -9,12 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< Updated upstream
-    "next": "14.1.0",
-    "node-html-parser": "^6.1.12",
-    "react": "^18",
-    "react-dom": "^18"
-=======
     "html-react-parser": "^5.1.7",
     "next": "14.1.0",
     "node-html-parser": "^6.1.12",
@@ -22,7 +16,6 @@
     "react": "^18",
     "react-dom": "^18",
     "xml2js": "^0.6.2"
->>>>>>> Stashed changes
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

@@ -1,10 +1,3 @@
-<<<<<<< Updated upstream
-export default async function AddCollection() {
-    const res = await fetch(
-        "https://api.geekdo.com/xmlapi/search?search=frika"
-    );
-=======
-/* eslint-disable @next/next/no-img-element */
 import FormLoad from "@/component/FormLoad";
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
@@ -24,7 +17,6 @@ export default async function AddCollection() {
     // console.log(data);
 
     // console.log(JSON.stringify(json.items.item));
->>>>>>> Stashed changes
 
     return (
         <div className="flex flex-col gap-4 justify-center items-center text-2xl font-mono mt-8">
@@ -37,13 +29,10 @@ export default async function AddCollection() {
                     <div>
                         <label>Name: </label>
                         <input
-<<<<<<< Updated upstream
-=======
                             id="name"
                             name="name"
                             list="nameList"
                             autoComplete="off"
->>>>>>> Stashed changes
                             className="bg-gray-500 border-2 border-black text-white rounded"
                             placeholder="name"
                             required
@@ -63,17 +52,12 @@ export default async function AddCollection() {
                         </datalist>
                     </div>
                     <div>
-<<<<<<< Updated upstream
-                        <label>Condition: </label>
-                        <select>
-=======
                         <label htmlFor="condition">Condition: </label>
                         <select
                             id="condition"
                             name="condition"
                             className="border-2 border-black rounded"
                         >
->>>>>>> Stashed changes
                             <option>New</option>
                             <option>Used</option>
                             <option>Damaged</option>
@@ -100,8 +84,6 @@ export default async function AddCollection() {
 
     async function handleSubmit(formData) {
         "use server";
-<<<<<<< Updated upstream
-=======
 
         const res = await fetch(
             "https://www.boardgamegeek.com/xmlapi2/hot?boardgame"
@@ -123,6 +105,5 @@ export default async function AddCollection() {
             }
         });
         revalidatePath("/collection");
->>>>>>> Stashed changes
     }
 }
