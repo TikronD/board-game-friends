@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import FormLoad from "@/component/FormLoad";
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
