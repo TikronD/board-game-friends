@@ -1,11 +1,26 @@
-.footer {
+section {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  height: 15vh;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.imagefooter {
+  background-image: url("../../public/images/Footer.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 0px;
+  z-index: 0;
+  width: 100%;
+  height: 10rem;
 }
 
 h4 {
+  color: #f0f8ff;
   margin: 0.5px;
 }
