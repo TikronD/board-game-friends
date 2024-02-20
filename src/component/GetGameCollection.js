@@ -1,7 +1,8 @@
 "use client";
-// import { db } from "@/lib/db";
+// import { db } from "@/lib/db"
 import { revalidatePath } from "next/cache";
 import Link from "next/link";
+import GameImage from "./GameImage";
 
 /* eslint-disable @next/next/no-img-element */
 export default function GetGameCollection({ game, handleDelete }) {
@@ -10,7 +11,8 @@ export default function GetGameCollection({ game, handleDelete }) {
             className="w-[75vw] max-w-[600px] bg-purple-500 rounded grid hover:scale-110 hover:text-blue-300 transition-all"
             style={{ gridTemplateColumns: `repeat(3, 1fr)` }}
         >
-            <img
+            <GameImage game={game} />
+            {/* <img
                 alt="game"
                 src="https://winpuzzles.com/wp-content/uploads/2022/10/uno-1.jpeg"
                 className=" rounded-tl rounded-bl"
@@ -18,10 +20,10 @@ export default function GetGameCollection({ game, handleDelete }) {
                     maskImage:
                         "linear-gradient(90deg, rgb(0,0,0), transparent 95%)",
                 }}
-            />
+            /> */}
             <Link
-                href={`/collection/game/${game.game_title}/${game.game_id}`}
-                className="justify-self-center text-2xl font-bold mt-2 hover:text-blue-300"
+                href={`/collection/game/${game.game_title}/${game.api_id}`}
+                className="justify-self-center text-sm font-bold font-mono mt-2 hover:text-blue-300"
             >
                 {game.game_title}
             </Link>
