@@ -2,6 +2,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider, UserButton, auth } from "@clerk/nextjs";
 import Link from "next/link";
+import Burger from "@/component/BurgerMenu";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
             {userId && <UserButton afterSignOutUrl="/" />}
             {!userId && <Link href="/sign-in">Sign in</Link>}
           </div>
+          <Burger />
           {children}
         </body>
       </html>

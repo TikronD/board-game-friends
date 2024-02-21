@@ -1,4 +1,3 @@
-
 import { authMiddleware } from "@clerk/nextjs";
 
 // The user cannot access any pages without signing in
