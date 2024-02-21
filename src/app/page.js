@@ -7,12 +7,11 @@ import Footer from "@/component/Footer";
 import Carousel from "@/component/Carousel";
 
 export default async function Home() {
-  const { userId } = auth();
-  const user = await db.query(
-    `SELECT * FROM profiles where clerk_user_id = $1`,
-    [userId]
-  );
-
+    const { userId } = auth();
+    const user = await db.query(
+        `SELECT * FROM profiles where clerk_user_id = $1`,
+        [userId]
+    );
   return (
     <>
       <Header />

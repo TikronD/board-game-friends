@@ -1,6 +1,7 @@
 import GetGameCollection from "@/component/GetGameCollection";
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
+import Link from "next/link";
 
 export default async function CollectionPage() {
     const collection = await db.query(
@@ -8,6 +9,12 @@ export default async function CollectionPage() {
     );
     return (
         <div className="flex flex-col gap-4 mt-4 justify-center items-center">
+            <Link
+                href="./collection/add"
+                className="bg-orange-500 border-2 border-black text-white underline hover:bg-orange-600 hover:text-black transition-colors absolute top-10 right-5 p-2"
+            >
+                Add to collection
+            </Link>
             {collection.rows.length != 0 &&
                 collection.rows.map((game) => {
                     return (
