@@ -13,7 +13,6 @@ export default async function userGame({ params }) {
     parser.parseString(xml, (err, result) => {
         json = result;
     });
-    console.log(JSON.stringify(json.boardgames.boardgame[0].maxplayers));
     let game = json.boardgames.boardgame[0];
     const description = game.description.toString();
     return (

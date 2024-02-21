@@ -5,15 +5,15 @@ import "@/app/marketplace/marketplace.css";
 import { auth } from "@clerk/nextjs";
 
 export default async function Marketplace({ handleSubmitListing }) {
-  const listings = await db.query(`SELECT * from marketplace`);
+    const listings = await db.query(`SELECT * from marketplace`);
 
-  const { userId } = auth();
-  const profileRes = await db.query(
-    `SELECT * from profiles
+    const { userId } = auth();
+    const profileRes = await db.query(
+        `SELECT * from profiles
       WHERE clerk_user_id = $1`,
-    [userId]
-  );
-  const profile_id = profileRes.rows[0].id;
+        [userId]
+    );
+    const profile_id = profileRes.rows[0].id;
 
   return (
     <>
@@ -28,9 +28,6 @@ export default async function Marketplace({ handleSubmitListing }) {
               <p>£{listing.price}</p>
               <p>{listing.condition}</p>
             </div>
-          );
-        })}
-      </div>
-    </>
-  );
+        </>
+    );
 }

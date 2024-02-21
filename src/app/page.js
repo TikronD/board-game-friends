@@ -7,12 +7,11 @@ import Footer from "@/component/Footer";
 import Carousel from "@/component/Carousel";
 
 export default async function Home() {
-  const { userId } = auth();
-  const user = await db.query(
-    `SELECT * FROM profiles where clerk_user_id = $1`,
-    [userId]
-  );
-
+    const { userId } = auth();
+    const user = await db.query(
+        `SELECT * FROM profiles where clerk_user_id = $1`,
+        [userId]
+    );
   return (
     <>
       <Header />
@@ -23,11 +22,11 @@ export default async function Home() {
           </Link>
         </div>
       )}
-      {userId && user.rowCount !== 0 && (
+      {/* {userId && user.rowCount !== 0 && (
         <div>
           <Link href="/profile">My Profile</Link>
         </div>
-      )}
+      )} */}
       <Carousel />
       <Footer />
     </>

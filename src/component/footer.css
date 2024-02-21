@@ -1,9 +1,11 @@
+
 .container {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .imagefooter {
+
   background-image: url("../../public/images/Footer.png");
   background-size: cover;
   background-position: 0 -10px;
