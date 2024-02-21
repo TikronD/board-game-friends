@@ -21,7 +21,7 @@ export default async function Marketplace({ handleSubmitListing }) {
       <div className="listingArea">
         {listings.rows.map((listing) => {
           return (
-            <div className="listingCard" key={listing_id}>
+            <div className="listingCard" key={listing.listing_id}>
               <Link href={`/marketplace/${listing.listing_id}`}>
                 <h3>{listing.game_title}</h3>
               </Link>
