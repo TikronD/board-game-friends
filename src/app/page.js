@@ -23,11 +23,11 @@ export default async function Home() {
           </Link>
         </div>
       )}
-      {userId && user.rowCount !== 0 && (
+      {/* {userId && user.rowCount !== 0 && (
         <div>
           <Link href="/profile">My Profile</Link>
         </div>
-      )}
+      )} */}
       <Carousel />
       <Footer />
     </>
