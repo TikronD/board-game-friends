@@ -1,9 +1,10 @@
-import Wishlist from "../../component/Wishlist";
+import Link from "next/link";
+import "../../component/wishlist.css";
 
 export default function wishlist() {
   return (
-    <div>
-      <Wishlist />
-    </div>
+    <Link href="/wishlist/add">
+      <button className="wishlist-btn">My Wishlist</button>
+    </Link>
   );
 }

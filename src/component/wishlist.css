@@ -13,7 +13,6 @@
   height: 70vh;
   display: flex;
   gap: 1rem;
-  margin-left: 3rem;
   padding: 1rem;
 }
 
@@ -51,7 +50,7 @@
 .wishlist-title {
   font-weight: bolder;
   margin-bottom: 1rem;
-  text-align: left;
+  text-align: center;
   margin-top: 0.5rem;
   color: #333;
 }
@@ -59,11 +58,8 @@
 .your-wishlist,
 .matches {
   display: flex;
-  flex-direction: column;
   gap: 0.2rem;
   margin-bottom: 0.5rem;
-  margin-right: 2rem;
-  margin-left: 2rem;
 }
 
 .your-wishlist-container {
@@ -71,14 +67,20 @@
   padding: 20px;
   border-radius: 15px;
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
-  width: 100%;
+  width: auto;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: white;
+  gap: 0.5rem;
 }
 
 .wishlist-form,
 .your-wishlist-container {
-  height: 290px;
+  height: auto;
+}
+
+.match-container {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
 }

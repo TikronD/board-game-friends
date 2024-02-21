@@ -105,7 +105,7 @@ export default async function Wishlist() {
       </div>
       <div className="format">
         <h2 className="wishlist-title">Marketplace Matches</h2>
-        <div className="your-wishlist-container">
+        <div className="your-wishlist-container match-container">
           {matches.map((game) => {
             return (
               <div className="matches" key={game.game_title + game.price}>
