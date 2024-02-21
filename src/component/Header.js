@@ -12,7 +12,7 @@ export default function Header() {
       <div className="headersection">
         <Image className="logo" src={logo} alt="boardgame friends logo" />
         <h1>Board Game Friends</h1>
-        <nav>
+        <nav className="headernav">
           <Link href="/">Home</Link>
           <Link href="./collection">My Collection</Link>
           <Link href="./events">Events</Link>

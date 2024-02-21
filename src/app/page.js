@@ -28,6 +28,12 @@ export default async function Home() {
           <Link href="/profile">My Profile</Link>
         </div>
       )} */}
+      <p className="herotext">
+        Experience buying and selling YOUR board games with our unique method:
+        store your collection upon account creation, sell items to the
+        marketplace anytime, and never miss out on a game again - simply add
+        desired titles to your wishlist and get notified upon availability!"
+      </p>
       <Carousel />
       <Footer />
     </>

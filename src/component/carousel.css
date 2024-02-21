@@ -7,7 +7,7 @@ body {
   position: relative;
   width: 100%;
   display: grid;
-  place-items: start;
+  place-items: center;
   overflow: hidden;
 }
 
