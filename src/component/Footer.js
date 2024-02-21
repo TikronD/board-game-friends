@@ -11,4 +11,5 @@ export default function Footer() {
         </h5>
       </div>
     </section>
-  )
+  );
+}
