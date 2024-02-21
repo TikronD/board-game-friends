@@ -6,23 +6,23 @@ import Link from "next/link";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Norfolk Board Gamers",
-  description: "Sell & Buy YOUR Boardgames",
+    title: "Norfolk Board Gamers",
+    description: "Sell & Buy YOUR Boardgames",
 };
 
 export default function RootLayout({ children }) {
-  const { userId } = auth();
-  return (
-    <ClerkProvider>
-      <html lang="en">
-        <body className={montserrat.className}>
-          <div className="user">
-            {userId && <UserButton afterSignOutUrl="/" />}
-            {!userId && <Link href="/sign-in">Sign in</Link>}
-          </div>
-          {children}
-        </body>
-      </html>
-    </ClerkProvider>
-  );
+    const { userId } = auth();
+    return (
+        <ClerkProvider>
+            <html lang="en">
+                <body className={montserrat.className}>
+                    <div className="user">
+                        {userId && <UserButton afterSignOutUrl="/" />}
+                        {!userId && <Link href="/sign-in">Sign in</Link>}
+                    </div>
+                    {children}
+                </body>
+            </html>
+        </ClerkProvider>
+    );
 }
