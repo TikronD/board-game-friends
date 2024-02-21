@@ -24,6 +24,10 @@ export default async function GetGameCollection({ game, handleDelete }) {
                 ({game.condition})
             </h2>
             <DeleteButton game={game} handleDelete={handleDelete} />
+            {/* <div></div>
+            <button className="bg-orange-500 text-white border-2 border-black hover:bg-orange-600 hover:text-black transition-colors underline absolute">
+                Add to marketplace
+            </button> */}
         </div>
     );
 }
