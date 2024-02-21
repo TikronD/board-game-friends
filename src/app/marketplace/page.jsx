@@ -15,21 +15,18 @@ export default async function Marketplace({ handleSubmitListing }) {
     );
     const profile_id = profileRes.rows[0].id;
 
-    return (
-        <>
-            <NewListingFormBtn profile_id={profile_id} />
-            <div className="listingArea">
-                {listings.rows.map((listing) => {
-                    return (
-                        <div className="listingCard">
-                            <Link href={`/marketplace/${listing.listing_id}`}>
-                                <h3>{listing.game_title}</h3>
-                            </Link>
-                            <p>£{listing.price}</p>
-                            <p>{listing.condition}</p>
-                        </div>
-                    );
-                })}
+  return (
+    <>
+      <NewListingFormBtn profile_id={profile_id} />
+      <div className="listingArea">
+        {listings.rows.map((listing) => {
+          return (
+            <div className="listingCard" key={listing.game_title}>
+              <Link href={`/marketplace/${listing.listing_id}`}>
+                <h3>{listing.game_title}</h3>
+              </Link>
+              <p>£{listing.price}</p>
+              <p>{listing.condition}</p>
             </div>
         </>
     );

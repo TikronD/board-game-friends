@@ -17,12 +17,20 @@ export default async function Profile() {
         const username = formData.get("username");
         const location = formData.get("location");
 
-        await db.query(
-            `INSERT INTO profiles (clerk_user_id, username, location) VALUES ('${userId}', '${username}', '${location}') `
-        );
-        revalidatePath("/profile");
-    }
-    return (
+    await db`INSERT INTO profiles (clerk_user_id, username, location) VALUES (${userId}, ${username}, ${location}) `;
+    revalidatePath("/profile");
+  }
+  return (
+    <div>
+      {user.rowCount === 0 && (
+        <form action={handleCreateUser}>
+          <h2 id="profile">Create Profile</h2>
+          <input name="username" placeholder="Enter a Username" />
+          <input name="location" placeholder="Location" />
+          <SubmitButton />
+        </form>
+      )}
+      {user.rowCount !== 0 && (
         <div>
             {user.rowCount === 0 && (
                 <form action={handleCreateUser}>
