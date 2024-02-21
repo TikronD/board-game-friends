@@ -3,12 +3,12 @@ body {
 }
 
 .slider {
-    height: 100vh;
-    position: relative;
-    width: 100%;
-    display: grid;
-    place-items: center;
-    overflow: hidden;
+  height: 80vh;
+  position: relative;
+  width: 100%;
+  display: grid;
+  place-items: start;
+  overflow: hidden;
 }
 
 .slide-track {
@@ -92,4 +92,11 @@ body {
     right: 0;
     top: 0;
     transform: rotateZ(180deg);
+}
+
+#marketplace-highlights {
+  text-align: center;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }

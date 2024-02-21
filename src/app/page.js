@@ -12,25 +12,23 @@ export default async function Home() {
         `SELECT * FROM profiles where clerk_user_id = $1`,
         [userId]
     );
-
-    return (
-        <>
-            <Header />
-            {userId && user.rowCount === 0 && (
-                <div>
-                    <Link href="/profile">
-                        <p>Create Profile</p>
-                    </Link>
-                </div>
-            )}
-            {userId && user.rowCount !== 0 && (
-                <div>
-                    <Link href="/profile">My profile</Link>
-                    {/* <CssGrid /> */}
-                </div>
-            )}
-            <Carousel />
-            <Footer />
-        </>
-    );
+  return (
+    <>
+      <Header />
+      {userId && user.rowCount === 0 && (
+        <div>
+          <Link href="/profile">
+            <p>Create Profile</p>
+          </Link>
+        </div>
+      )}
+      {userId && user.rowCount !== 0 && (
+        <div>
+          <Link href="/profile">My Profile</Link>
+        </div>
+      )}
+      <Carousel />
+      <Footer />
+    </>
+  );
 }
