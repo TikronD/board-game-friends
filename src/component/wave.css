@@ -7,7 +7,7 @@ body {
 .wave {
   display: block;
   position: relative;
-  height: 250px;
+  height: 40px;
   width: 100%;
   background: #ff914d;
   transform: scale(1, 1);
