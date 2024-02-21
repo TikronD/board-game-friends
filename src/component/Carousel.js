@@ -8,14 +8,43 @@ import bg6 from "@/../public/images/example-images/bg6.jpg";
 import bg7 from "@/../public/images/example-images/bg7.jpg";
 import bg8 from "@/../public/images/example-images/bg8.jpg";
 import bg9 from "@/../public/images/example-images/bg9.jpg";
-
 import "./carousel.css";
+import { db } from "@/lib/db";
+import Link from "next/link";
 
-export default function Carousel() {
+const images = [bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8, bg9];
+
+export default async function Carousel() {
+  const listings = await db.query(
+    `SELECT game_title, price from marketplace LIMIT 9`
+  );
+
+  const doubleListings = [...listings.rows, ...listings.rows];
   return (
-    <div className="slider">
-      <div className="slide-track">
-        <div className="slide">
+    <div>
+      <h2 id="marketplace-highlights">Marketplace Highlights</h2>
+      <div className="slider">
+        <div className="slide-track">
+          {doubleListings.map((game, index) => {
+            return (
+              <div className="slide" key={index}>
+                <Image
+                  className="image"
+                  src={images[index % images.length]}
+                  alt={`board-game${index + 1}`}
+                />
+                <h3>{game.game_title}</h3>
+                <p className="price">£{game.price}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* <div className="slide">
           <Image className="image" src={bg1} alt="board-game1" />
           <h3>Monopoly</h3>
           <p className="price">£20</p>
@@ -104,8 +133,4 @@ export default function Carousel() {
           <Image className="image" src={bg9} alt="board-game18" />
           <h3>Collection</h3>
           <p className="price">£15</p>
-        </div>
-      </div>
-    </div>
-  );
-}
+        </div> */

@@ -24,7 +24,7 @@ export default async function Profile() {
     <div>
       {user.rowCount === 0 && (
         <form action={handleCreateUser}>
-          <h2>Create Profile</h2>
+          <h2 id="profile">Create Profile</h2>
           <input name="username" placeholder="Enter a Username" />
           <input name="location" placeholder="Location" />
           <SubmitButton />
