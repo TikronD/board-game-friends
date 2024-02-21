@@ -7,8 +7,8 @@ import Burger from "@/component/BurgerMenu";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Norfolk Board Gamers",
-  description: "Sell & Buy YOUR Boardgames",
+    title: "Norfolk Board Gamers",
+    description: "Sell & Buy YOUR Boardgames",
 };
 
 export default function RootLayout({ children }) {

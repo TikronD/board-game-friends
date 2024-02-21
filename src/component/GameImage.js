@@ -10,7 +10,7 @@ export default async function GameImage({ game }) {
     parser.parseString(xml, function (err, result) {
         json = result;
     });
-    console.log(JSON.stringify(json.boardgames.boardgame[0].thumbnail));
+    // console.log(JSON.stringify(json.boardgames.boardgame[0].thumbnail));
 
     return (
         <img

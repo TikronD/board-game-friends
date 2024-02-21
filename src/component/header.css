@@ -1,3 +1,4 @@
+
 .container {
   display: flex;
   align-items: center;
@@ -39,13 +40,13 @@ nav {
 }
 
 nav a {
-  color: #f0f8ff;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
+    color: #f0f8ff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
 
 a:hover {
-  color: rgb(202, 197, 197);
+    color: rgb(202, 197, 197);
 }
 
 @media (max-width: 940px) {
