@@ -18,6 +18,7 @@ export default async function individualListing({ params }) {
     <div className="listingContainer">
       <h3>{listings.rows[0].game_title}</h3>
       <p>{listings.rows[0].price}</p>
+      <p>Seller: </p>
       <p>{listings.rows[0].description}</p>
       <p>{listings.rows[0].condition}</p>
     </div>
