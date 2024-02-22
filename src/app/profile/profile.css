@@ -1,0 +1,23 @@
+.profile-container {
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  gap: 1rem;
+  border: 2px solid #5f9bdb;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.username-bio h4 {
+  color: black;
+}
