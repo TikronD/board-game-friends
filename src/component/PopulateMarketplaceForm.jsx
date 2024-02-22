@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { apiSearch } from "../lib/apiCall";
+import "@/component/newMarketplaceListingForm.css";
 
 export default function populateMarketplaceForm() {
   const [data, setData] = useState("");
@@ -26,10 +27,9 @@ export default function populateMarketplaceForm() {
     }
   }
 
-  console.log("testing");
   return (
-    <div clasName="newMarketplaceListingFormContainer">
-      <p>Add New Listing</p>
+    <div className="newMarketplaceListingFormContainer">
+      <p>Create New Listing</p>
       <form action={handleSubmitListing}>
         <input
           name="game_title"
@@ -41,10 +41,7 @@ export default function populateMarketplaceForm() {
           //   onChange={handleChange}
         />
         <datalist name="game_list" id="game_list">
-          {data !== "" &&
-            data.map((item) => {
-              console.log(item);
-            })}
+          {data !== "" && data.map((item) => {})}
         </datalist>
         <input
           name="price"
@@ -56,15 +53,15 @@ export default function populateMarketplaceForm() {
         <textarea
           name="description"
           id="description"
-          cols="30"
-          rows="10"
+          cols="20"
+          rows="5"
           required
           placeholder="Description"
         ></textarea>
         <select name="condition" id="condition">
           <option value="New">New</option>
           <option value="Used">Used</option>
-          <option value="Damanged">Damaged</option>
+          <option value="Damaged">Damaged</option>
         </select>
         <select name="extras" id="extras">
           <option value="true">Yes</option>
