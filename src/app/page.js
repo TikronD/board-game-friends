@@ -5,13 +5,14 @@ import Link from "next/link";
 import Header from "@/component/Header";
 import Footer from "@/component/Footer";
 import Carousel from "@/component/Carousel";
+import Banner from "@/component/Banner";
 
 export default async function Home() {
-    const { userId } = auth();
-    const user = await db.query(
-        `SELECT * FROM profiles where clerk_user_id = $1`,
-        [userId]
-    );
+  const { userId } = auth();
+  const user = await db.query(
+    `SELECT * FROM profiles where clerk_user_id = $1`,
+    [userId]
+  );
   return (
     <>
       <Header />
@@ -34,6 +35,7 @@ export default async function Home() {
         desired titles to your wishlist and get notified upon availability!"
       </p>
       <Carousel />
+      <Banner />
       <Footer />
     </>
   );
