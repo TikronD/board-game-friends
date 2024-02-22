@@ -1,6 +1,7 @@
 import { db } from "@/lib/db";
 import "./wishlist.css";
 import { auth } from "@clerk/nextjs";
+import { revalidatePath } from "next/cache";
 
 export default async function Wishlist() {
   const now = new Date();
@@ -41,6 +42,8 @@ export default async function Wishlist() {
       `INSERT INTO wishlist (user_id, game_title, price_max, condition_min, extras, time) VALUES ($1, $2, $3, $4, $5, $6)`,
       [id, gameTitle, priceMax, conditionMin, extras, timestamp]
     );
+
+    revalidatePath("/wishlist/add");
   }
 
   return (
