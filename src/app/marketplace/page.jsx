@@ -26,17 +26,20 @@ export default async function Marketplace({ handleSubmitListing }) {
       <NewListingFormBtn profile_id={profile_id} />
       <div className="listingArea">
         {listings.rows.map(async (listing) => {
-          console.log(listing.api_id);
           let src = await apiBoardGame(listing.api_id);
           return (
-            <div className="listingCard" key={listing.id}>
-              <Link href={`/marketplace/listing/${listing.id}`}>
-                <h3>{listing.game_title}</h3>
-              </Link>
-              <p>£{listing.price}</p>
-              <p>{listing.condition}</p>
-              <img src={src.image[0]} />
-            </div>
+            <Link href={`/marketplace/listing/${listing.id}`}>
+              <div className="listingCard" key={listing.id}>
+                <div className="listingInfo">
+                  <h3>{listing.game_title}</h3>
+                  <p>£{listing.price}</p>
+                  <p>{listing.condition}</p>
+                </div>
+                <div className="imgContainer">
+                  <img className="listingImg" src={src.image[0]} />
+                </div>
+              </div>
+            </Link>
           );
         })}
       </div>
