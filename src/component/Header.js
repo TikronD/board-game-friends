@@ -6,7 +6,6 @@ import logo from "@/../public/images/Logo-removebg.png";
 
 export default function Header() {
   return (
-    // <section className="imageheader">
     <section>
       <div className="headersection">
         <Image className="logo" src={logo} alt="boardgame friends logo" />
