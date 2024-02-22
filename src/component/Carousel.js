@@ -17,7 +17,7 @@ const images = [bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8, bg9];
 
 export default async function Carousel() {
   const listings = await db.query(
-    `SELECT game_title, price, api_id from marketplace LIMIT 9`
+    `SELECT game_title, price, api_id, id from marketplace LIMIT 9`
   );
 
   const doubleListings = [...listings.rows, ...listings.rows];
@@ -29,15 +29,17 @@ export default async function Carousel() {
           {doubleListings.map(async (game, index) => {
             const boardGameData = await apiBoardGame(game.api_id);
             return (
-              <div className="slide" key={index}>
-                <img
-                  className="image"
-                  src={boardGameData.image[0]}
-                  alt={`board-game${index + 1}`}
-                />
-                <h3 className="game-title-carousel">{game.game_title}</h3>
-                <p className="price">£{game.price}</p>
-              </div>
+              <Link href={`/marketplace/listing/${game.id}`}>
+                <div className="slide" key={index}>
+                  <img
+                    className="image"
+                    src={boardGameData.image[0]}
+                    alt={`board-game${index + 1}`}
+                  />
+                  <h3 className="game-title-carousel">{game.game_title}</h3>
+                  <p className="price">£{game.price}</p>
+                </div>
+              </Link>
             );
           })}
         </div>
