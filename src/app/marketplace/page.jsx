@@ -22,7 +22,7 @@ export default async function Marketplace({ handleSubmitListing }) {
         {listings.rows.map((listing) => {
           return (
             <div className="listingCard" key={listing.game_title}>
-              <Link href={`/marketplace/${listing.listing_id}`}>
+              <Link href={`/marketplace/listing/${listing.id}`}>
                 <h3>{listing.game_title}</h3>
               </Link>
               <p>£{listing.price}</p>

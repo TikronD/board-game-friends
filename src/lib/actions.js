@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { db } from "./db";
-
+// function to submit listing into marketplace //
 export async function handleSubmitListing(profile_id, formData) {
   const gameTitle = formData.get("game_title");
   const price = formData.get("price");
@@ -17,4 +17,15 @@ export async function handleSubmitListing(profile_id, formData) {
   );
 
   revalidatePath("/marketplace");
+}
+
+// function to GET all listings from marketplace //
+
+export async function getListings(id) {
+  const listings = await db.query(
+    `SELECT marketplace.id AS listing_id, user_id, game_title, price, description, condition, extras FROM marketplace WHERE marketplace.id = $1`,
+    [id]
+  );
+
+  return listings;
 }

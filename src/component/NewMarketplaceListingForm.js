@@ -33,7 +33,7 @@ export default function NewMarketplaceListingForm({ profile_id }) {
         <select name="condition" id="condition">
           <option value="New">New</option>
           <option value="Used">Used</option>
-          <option value="Damanged">Damaged</option>
+          <option value="Damaged">Damaged</option>
         </select>
         <select name="extras" id="extras">
           <option value="true">Yes</option>
