@@ -68,10 +68,7 @@ export default async function Wishlist() {
                   className="your-wishlist"
                   key={game.game_title + game.price_max}
                 >
-                  <img
-                    className="wishlist-img"
-                    src={boardGameData[0].image[0]}
-                  />
+                  <img className="wishlist-img" src={boardGameData.image[0]} />
                   <h3 className="wishlist-game">
                     <strong>{game.game_title}</strong>
                   </h3>
@@ -96,7 +93,7 @@ export default async function Wishlist() {
             const boardGameData = await apiBoardGame(game.api_id);
             return (
               <div className="matches" key={game.game_title + game.price}>
-                <img className="wishlist-img" src={boardGameData[0].image[0]} />
+                <img className="wishlist-img" src={boardGameData.image[0]} />
                 <h3>
                   <strong>{game.game_title}</strong>
                 </h3>
