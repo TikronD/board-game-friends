@@ -34,5 +34,19 @@ export default function About() {
           <Image className="image-about" src={pic4} alt="pic4" />
           <h3>Edd</h3>
         </div>
-    );
+        <div className="slide-about">
+          <Image className="image-about" src={pic3} alt="pic3" />
+          <h3>Jimmy</h3>
+        </div>
+        <div className="slide-about">
+          <Image className="image-about" src={pic1} alt="pic1" />
+          <h3>Dan</h3>
+        </div>
+        <div className="slide-about">
+          <Image className="image-about" src={pic2} alt="pic2" />
+          <h3>Ben</h3>
+        </div>
+      </div>
+    </div>
+  );
 }
