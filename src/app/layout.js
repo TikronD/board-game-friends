@@ -4,6 +4,7 @@ import { ClerkProvider, UserButton, auth } from "@clerk/nextjs";
 import Link from "next/link";
 import Header from "@/component/Header";
 import Burger from "@/component/BurgerMenu";
+import Footer from "@/component/Footer";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
           </div>
           {children}
           <Burger />
+          <Footer />
         </body>
       </html>
     </ClerkProvider>
