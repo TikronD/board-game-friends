@@ -3,6 +3,7 @@
   padding: 8px;
   border-radius: 5px;
   outline: none;
+  width: 200px;
 }
 
 .wishlist-input:focus {
@@ -32,7 +33,9 @@
   display: flex;
   gap: 2rem;
 }
-
+.extras-label {
+  margin-right: 1.6rem;
+}
 .wishlist-btn {
   text-align: center;
   border: 1px solid #5f9bdb;
@@ -62,6 +65,10 @@
   margin-bottom: 0.5rem;
 }
 
+.matches {
+  gap: 1rem;
+}
+
 .your-wishlist-container {
   border: 2px solid #5f9bdb;
   padding: 20px;
@@ -82,7 +89,7 @@
 .match-container {
   display: flex;
   flex-direction: column;
-  width: 250px;
+  width: 300px;
 }
 
 .wishlist-img {

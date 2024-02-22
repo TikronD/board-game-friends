@@ -50,7 +50,7 @@ export default function WishlistForm({ handleWishList, api }) {
       </div>
 
       <div className="extras">
-        <label>Extras</label>
+        <label className="extras-label">Extras</label>
         <select className="wishlist-input" name="extras" required>
           <option value="">Please select option</option>
           <option value="yes">Yes</option>

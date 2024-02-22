@@ -19,7 +19,7 @@ export default async function Wishlist() {
   const id = idQuery.rows[0].id;
 
   const marketplaceData = await db.query(
-    `SELECT game_title, price from marketplace`
+    `SELECT game_title, price, api_id from marketplace`
   );
 
   const wishlistData = await db.query(
@@ -92,9 +92,11 @@ export default async function Wishlist() {
       <div className="format">
         <h2 className="wishlist-title">Marketplace Matches</h2>
         <div className="your-wishlist-container match-container">
-          {matches.map((game) => {
+          {matches.map(async (game) => {
+            const boardGameData = await apiBoardGame(game.api_id);
             return (
               <div className="matches" key={game.game_title + game.price}>
+                <img className="wishlist-img" src={boardGameData[0].image[0]} />
                 <h3>
                   <strong>{game.game_title}</strong>
                 </h3>
