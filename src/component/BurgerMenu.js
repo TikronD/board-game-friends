@@ -1,11 +1,12 @@
 import "./burger.css";
 import Link from "next/link";
 export default function Burger() {
+
   return (
     <div>
       <input type="checkbox" id="menu-toggle" />
-      <label id="trigger" for="menu-toggle"></label>
-      <label id="burger" for="menu-toggle"></label>
+      <label id="trigger" htmlFor="menu-toggle"></label>
+      <label id="burger" htmlFor="menu-toggle"></label>
       <ul id="menu">
         <li>
           <Link href="/">Home</Link>
@@ -28,4 +29,5 @@ export default function Burger() {
       </ul>
     </div>
   );
+
 }

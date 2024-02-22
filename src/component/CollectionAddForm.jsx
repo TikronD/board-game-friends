@@ -2,9 +2,10 @@
 import { useState } from "react";
 import FormLoad from "./FormLoad";
 import xml2js from "xml2js";
+import apiCall, { apiSearch } from "@/lib/apiCall";
 
-export default function CollectionAddForm({ json, handleSubmit, getAPI }) {
-    const [data, setData] = useState(json);
+export default function CollectionAddForm({ api, handleSubmit }) {
+    const [data, setData] = useState(api);
     const [price, setPrice] = useState(``);
     let i = 0;
     return (
@@ -13,13 +14,12 @@ export default function CollectionAddForm({ json, handleSubmit, getAPI }) {
             <form
                 action={(event) => {
                     handleSubmit(event, data);
-                    console.log("here");
                 }}
                 className="flex flex-col gap-8 items-center justify-center"
             >
                 <div className="flex flex-row gap-8">
                     <div>
-                        <label>Name: </label>
+                        <label htmlFor="name">Name: </label>
                         <input
                             id="name"
                             name="name"
@@ -31,7 +31,7 @@ export default function CollectionAddForm({ json, handleSubmit, getAPI }) {
                             required
                         />
                         <datalist id="nameList" name="nameList">
-                            {data.items.item.map((item) => {
+                            {data.map((item) => {
                                 // console.log(JSON.stringify(item));
                                 i++;
                                 return (
@@ -83,19 +83,10 @@ export default function CollectionAddForm({ json, handleSubmit, getAPI }) {
 
     async function getapi(event) {
         const name = event.target.value;
-        let res = await fetch(
-            `https://api.geekdo.com/xmlapi2/search?query=${name}`
-        );
+        let res = await apiSearch(name);
         if (name == "") {
-            res = await fetch(
-                "https://www.boardgamegeek.com/xmlapi2/hot?boardgame"
-            );
+            res = await apiCall();
         }
-        const xml = await res.text();
-        const parser = new xml2js.Parser();
-        // let json;
-        parser.parseString(xml, function (err, result) {
-            setData(result);
-        });
+        setData(res);
     }
 }
