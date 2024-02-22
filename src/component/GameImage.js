@@ -1,8 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import { apiSearch } from "@/lib/apiCall";
-import xml2js from "xml2js";
+import { apiBoardGame, apiSearch } from "@/lib/apiCall";
 export default async function GameImage({ game }) {
-    const api = await apiSearch(game.api_id);
+    const api = await apiBoardGame(game.api_id);
     return (
         <img
             alt="game"
