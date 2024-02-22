@@ -15,7 +15,7 @@ export default async function AddCollection() {
         <>
             <Link
                 href="./"
-                className="bg-orange-500 border-2 border-black text-white underline hover:bg-orange-600 hover:text-black transition-colors absolute top-5 left-5 p-2"
+                className="bg-orange-500 border-2 border-black text-white underline hover:bg-orange-600 hover:text-black transition-colors absolute top-5 right-5 p-2"
             >
                 Back to collection
             </Link>
