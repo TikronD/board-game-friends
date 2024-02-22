@@ -1,8 +1,6 @@
 import { db } from "../lib/db";
 import { auth } from "@clerk/nextjs";
 import Link from "next/link";
-
-import Footer from "@/component/Footer";
 import Carousel from "@/component/Carousel";
 import Banner from "@/component/Banner";
 
@@ -36,7 +34,6 @@ export default async function Home() {
       <Carousel />
       <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
       <Banner />
-      <Footer />
     </>
   );
 }
