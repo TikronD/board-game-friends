@@ -29,8 +29,8 @@ export default async function Marketplace({ handleSubmitListing }) {
           console.log(listing.api_id);
           let src = await apiBoardGame(listing.api_id);
           return (
-            <div className="listingCard" key={listing.listing_id}>
-              <Link href={`/marketplace/${listing.listing_id}`}>
+            <div className="listingCard" key={listing.id}>
+              <Link href={`/marketplace/listing/${listing.id}`}>
                 <h3>{listing.game_title}</h3>
               </Link>
               <p>£{listing.price}</p>
