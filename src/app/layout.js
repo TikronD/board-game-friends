@@ -7,8 +7,8 @@ import Burger from "@/component/BurgerMenu";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
-    title: "Norfolk Board Gamers",
-    description: "Sell & Buy YOUR Boardgames",
+  title: "Norfolk Board Gamers",
+  description: "Sell & Buy YOUR Boardgames",
 };
 
 export default function RootLayout({ children }) {
@@ -21,8 +21,8 @@ export default function RootLayout({ children }) {
             {userId && <UserButton afterSignOutUrl="/" />}
             {!userId && <Link href="/sign-in">Sign in</Link>}
           </div>
-          <Burger />
           {children}
+          <Burger />
         </body>
       </html>
     </ClerkProvider>

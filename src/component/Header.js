@@ -14,7 +14,6 @@ export default function Header() {
         <nav className="headernav">
           <Link href="/">Home</Link>
           <Link href="/collection">My Collection</Link>
-          <Link href="/events">Events</Link>
           <Link href="/marketplace">Marketplace</Link>
           <Link href="/about">About</Link>
         </nav>
@@ -22,4 +21,3 @@ export default function Header() {
     </section>
   );
 }
-
