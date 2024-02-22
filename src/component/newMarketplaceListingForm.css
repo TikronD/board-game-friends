@@ -1,13 +1,13 @@
 .newMarketplaceListingFormContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
-  border: 3px solid black;
-  background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    border: 3px solid black;
+    background-color: bisque;
 }
 
 .newMarketplaceListingFormContainer input {
-  background-color: none;
+    background-color: none;
 }
