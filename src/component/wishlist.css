@@ -58,7 +58,7 @@
 .your-wishlist,
 .matches {
   display: flex;
-  gap: 0.7rem;
+  gap: 3rem;
   margin-bottom: 0.5rem;
 }
 
@@ -83,4 +83,14 @@
   display: flex;
   flex-direction: column;
   width: 250px;
+}
+
+.wishlist-img {
+  width: 60px;
+  height: 60px;
+}
+
+.wishlist-game,
+.wishlist-attributes {
+  width: 13%;
 }
