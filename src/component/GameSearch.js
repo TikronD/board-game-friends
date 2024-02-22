@@ -1,31 +1,27 @@
 "use client";
 import FormLoad from "@/component/FormLoad";
-import { useState } from "react";
+// import { useState } from "react";
 // import { useFormStatus } from "react-dom";
 
-export default function GameSearch({ json, handleSubmit }) {
-    const [name, setName] = useState("");
+export default function GameSearch({ getAPI }) {
+    // const [name, setName] = useState("");
     // const { pending } = useFormStatus();
     return (
-        <form
-            action={hand}
-            className="flex flex-col gap-8 items-center justify-center"
-        >
-            <div className="flex flex-row gap-8">
-                <div>
-                    <label htmlFor="name">Name: </label>
-                    <input
-                        id="name"
-                        onChange={(event) => setName(event.target.value)}
-                        value={name}
-                        name="name"
-                        list="nameList"
-                        autoComplete="off"
-                        className="bg-gray-500 border-2 border-black text-white rounded"
-                        placeholder="name"
-                        required
-                    />
-                    <datalist
+        <div className="flex flex-row gap-8">
+            <div>
+                <label htmlFor="name">Name: </label>
+                <input
+                    id="name"
+                    onChange={(event) => getAPI(event)}
+                    // value={name}
+                    name="name"
+                    list="nameList"
+                    autoComplete="off"
+                    className="bg-gray-500 border-2 border-black text-white rounded"
+                    placeholder="name"
+                    required
+                />
+                {/* <datalist
                         id="nameList"
                         name="nameList"
                         onSubmit={(event) => {
@@ -55,10 +51,8 @@ export default function GameSearch({ json, handleSubmit }) {
                         <option>New</option>
                         <option>Used</option>
                         <option>Damaged</option>
-                    </select>
-                </div>
+                    </select> */}
             </div>
-            <FormLoad />
-        </form>
+        </div>
     );
 }
