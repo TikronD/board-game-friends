@@ -2,13 +2,14 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider, UserButton, auth } from "@clerk/nextjs";
 import Link from "next/link";
+import Header from "@/component/Header";
 import Burger from "@/component/BurgerMenu";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
-    title: "Norfolk Board Gamers",
-    description: "Sell & Buy YOUR Boardgames",
+  title: "Norfolk Board Gamers",
+  description: "Sell & Buy YOUR Boardgames",
 };
 
 export default function RootLayout({ children }) {
@@ -17,12 +18,13 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="en">
         <body className={montserrat.className}>
+          <Header />
           <div className="user">
             {userId && <UserButton afterSignOutUrl="/" />}
             {!userId && <Link href="/sign-in">Sign in</Link>}
           </div>
-          <Burger />
           {children}
+          <Burger />
         </body>
       </html>
     </ClerkProvider>

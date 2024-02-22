@@ -58,8 +58,8 @@ aside {
 #burger:before,
 #burger:after {
   position: absolute;
-  top: 70px;
-  left: 25px;
+  top: 85px;
+  left: 20px;
   background-color: #000;
   width: 30px;
   height: 5px;
@@ -106,9 +106,11 @@ Open state of burger #menu-toggle:checked + #trigger + #burger {
   position: absolute;
   margin: 0;
   padding: 0;
-  top: 50px;
-  width: 110px;
-  height: 110px;
+  /* position of menu background */
+  top: 70px;
+  /* size of menu b ackground */
+  width: 80px;
+  height: 80px;
   border-bottom-right-radius: 100%;
   /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26); */
   background-color: #ff914d;

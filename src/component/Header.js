@@ -6,7 +6,6 @@ import logo from "@/../public/images/Logo-removebg.png";
 
 export default function Header() {
   return (
-    // <section className="imageheader">
     <section>
       <div className="headersection">
         <Image className="logo" src={logo} alt="boardgame friends logo" />
@@ -14,7 +13,7 @@ export default function Header() {
         <nav className="headernav">
           <Link href="/">Home</Link>
           <Link href="/collection">My Collection</Link>
-          <Link href="/events">Events</Link>
+          <Link href="/wishlist/add">My Wishlist</Link>
           <Link href="/marketplace">Marketplace</Link>
           <Link href="/about">About</Link>
         </nav>
@@ -22,4 +21,3 @@ export default function Header() {
     </section>
   );
 }
-

@@ -14,7 +14,6 @@ export default async function apiCall() {
 }
 
 export async function apiBoardGame(id) {
-  console.log(id);
   const res = await fetch(`https://api.geekdo.com/xmlapi/boardgame/${id}`);
   const xml = await res.text();
   const parser = new xml2js.Parser();
