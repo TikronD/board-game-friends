@@ -1,6 +1,7 @@
 import "./burger.css";
 import Link from "next/link";
 export default function Burger() {
+
   return (
     <div>
       <input type="checkbox" id="menu-toggle" />
@@ -28,4 +29,5 @@ export default function Burger() {
       </ul>
     </div>
   );
+
 }
