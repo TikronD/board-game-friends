@@ -32,7 +32,7 @@ export default async function Carousel() {
               <div className="slide" key={index}>
                 <img
                   className="image"
-                  src={boardGameData[0].image[0]}
+                  src={boardGameData.image[0]}
                   alt={`board-game${index + 1}`}
                 />
                 <h3 className="game-title-carousel">{game.game_title}</h3>

@@ -35,7 +35,7 @@ export default async function Marketplace({ handleSubmitListing }) {
               </Link>
               <p>£{listing.price}</p>
               <p>{listing.condition}</p>
-              <img src={src[0].image[0]} />
+              <img src={src.image[0]} />
             </div>
           );
         })}
