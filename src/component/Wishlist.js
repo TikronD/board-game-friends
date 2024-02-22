@@ -83,7 +83,7 @@ export default async function Wishlist() {
                   </p>
                   <p className="wishlist-attributes">Extras: {game.extras}</p>
                 </div>
-                <hr class="h-px my-2 bg-gray-300 border-0 dark:bg-gray-700"></hr>
+                <hr className="h-px my-2 bg-gray-300 border-0 dark:bg-gray-700"></hr>
               </div>
             );
           })}
