@@ -11,6 +11,7 @@ import xml2js from "xml2js";
 
 export default async function AddCollection() {
     const api = await apiCall();
+    // black spot of shame
     return (
         <>
             <Link

@@ -22,7 +22,7 @@ export async function apiBoardGame(id) {
     parser.parseString(xml, function (err, result) {
         json = result;
     });
-    return json.boardgames.boardgame;
+    return json.boardgames.boardgame[0];
 }
 
 export async function apiSearch(name) {
