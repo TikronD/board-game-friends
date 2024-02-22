@@ -14,14 +14,15 @@ export default async function apiCall() {
 }
 
 export async function apiBoardGame(id) {
-  const res = await fetch(`https://api.geekdo.com/xmlapi/boardgame/${id}`);
-  const xml = await res.text();
-  const parser = new xml2js.Parser();
-  let json = "";
-  parser.parseString(xml, function (err, result) {
-    json = result;
-  });
-  return json.boardgames.boardgame;
+    console.log(id);
+    const res = await fetch(`https://api.geekdo.com/xmlapi/boardgame/${id}`);
+    const xml = await res.text();
+    const parser = new xml2js.Parser();
+    let json = "";
+    parser.parseString(xml, function (err, result) {
+        json = result;
+    });
+    return json.boardgames.boardgame[0];
 }
 
 export async function apiSearch(name) {
