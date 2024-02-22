@@ -1,5 +1,6 @@
 import { getListings } from "@/lib/actions";
-import { auth } from "@clerk/nextjs";
+import "@/app/marketplace/marketplace.css";
+// import { auth } from "@clerk/nextjs";
 // import { db } from "@/lib/db";
 
 export default async function individualListing({ params }) {
