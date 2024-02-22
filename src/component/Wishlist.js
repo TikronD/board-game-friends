@@ -4,6 +4,7 @@ import { auth } from "@clerk/nextjs";
 import { revalidatePath } from "next/cache";
 import apiCall, { apiBoardGame, apiSearchStrict } from "@/lib/apiCall";
 import WishlistForm from "./WishlistForm.jsx";
+import Link from "next/link";
 
 export default async function Wishlist() {
   const api = await apiCall();
@@ -19,7 +20,7 @@ export default async function Wishlist() {
   const id = idQuery.rows[0].id;
 
   const marketplaceData = await db.query(
-    `SELECT game_title, price, api_id from marketplace`
+    `SELECT game_title, price, api_id, id from marketplace`
   );
 
   const wishlistData = await db.query(
@@ -92,13 +93,15 @@ export default async function Wishlist() {
           {matches.map(async (game) => {
             const boardGameData = await apiBoardGame(game.api_id);
             return (
-              <div className="matches" key={game.game_title + game.price}>
-                <img className="wishlist-img" src={boardGameData.image[0]} />
-                <h3>
-                  <strong>{game.game_title}</strong>
-                </h3>
-                <p>Price: £{game.price}</p>
-              </div>
+              <Link href={`/marketplace/listing/${game.id}`}>
+                <div className="matches" key={game.game_title + game.price}>
+                  <img className="wishlist-img" src={boardGameData.image[0]} />
+                  <h3>
+                    <strong>{game.game_title}</strong>
+                  </h3>
+                  <p>Price: £{game.price}</p>
+                </div>
+              </Link>
             );
           })}
         </div>
