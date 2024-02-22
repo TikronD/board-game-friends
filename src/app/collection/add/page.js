@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 // "use server";
+import apiCall from "@/lib/apiCall";
 import CollectionAddForm from "@/component/CollectionAddForm";
 import FormLoad from "@/component/FormLoad";
 import { db } from "@/lib/db";
@@ -9,15 +10,7 @@ import Link from "next/link";
 import xml2js from "xml2js";
 
 export default async function AddCollection() {
-    const res = await fetch(
-        "https://www.boardgamegeek.com/xmlapi2/hot?boardgame"
-    );
-    const xml = await res.text();
-    const parser = new xml2js.Parser();
-    let json = "";
-    parser.parseString(xml, function (err, result) {
-        json = result;
-    });
+    const api = await apiCall();
     return (
         <>
             <Link
@@ -26,18 +19,18 @@ export default async function AddCollection() {
             >
                 Back to collection
             </Link>
-            <CollectionAddForm json={json} handleSubmit={handleSubmit} />
+            <CollectionAddForm api={api} handleSubmit={handleSubmit} />
         </>
     );
 
-    async function handleSubmit(formData, json) {
+    async function handleSubmit(formData, api) {
         "use server";
 
         const condition = formData.get("condition");
         const name = formData.get("name");
         const price = formData.get("price").replace("£", "");
 
-        json.items.item.map(async (item) => {
+        api.map(async (item) => {
             if (item.name[0].$.value == name) {
                 const { userId } = auth();
                 const user = await db.query(
