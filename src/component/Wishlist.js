@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import { db } from "@/lib/db";
 import "./wishlist.css";
 import { auth } from "@clerk/nextjs";
@@ -21,11 +20,11 @@ export default async function Wishlist() {
     const id = idQuery.rows[0].id;
 
     const marketplaceData = await db.query(
-        `SELECT game_title, price, api_id from marketplace`
+        `SELECT game_title, price, api_id, id from marketplace`
     );
 
     const wishlistData = await db.query(
-        `SELECT id game_title, price_max, condition_min, extras, api_id from wishlist WHERE user_id = ${id}`
+        `SELECT game_title, price_max, condition_min, extras, api_id from wishlist WHERE user_id = ${id}`
     );
 
     const matches = marketplaceData.rows.filter((game) =>
@@ -108,19 +107,21 @@ export default async function Wishlist() {
                     {matches.map(async (game) => {
                         const boardGameData = await apiBoardGame(game.api_id);
                         return (
-                            <div
-                                className="matches"
-                                key={game.game_title + game.price}
-                            >
-                                <img
-                                    className="wishlist-img"
-                                    src={boardGameData.image[0]}
-                                />
-                                <h3>
-                                    <strong>{game.game_title}</strong>
-                                </h3>
-                                <p>Price: £{game.price}</p>
-                            </div>
+                            <Link href={`/marketplace/listing/${game.id}`}>
+                                <div
+                                    className="matches"
+                                    key={game.game_title + game.price}
+                                >
+                                    <img
+                                        className="wishlist-img"
+                                        src={boardGameData.image[0]}
+                                    />
+                                    <h3>
+                                        <strong>{game.game_title}</strong>
+                                    </h3>
+                                    <p>Price: £{game.price}</p>
+                                </div>
+                            </Link>
                         );
                     })}
                 </div>

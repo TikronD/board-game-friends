@@ -31,11 +31,10 @@ export default async function Home() {
                 simply add desired titles to your wishlist and get notified upon
                 availability!
             </p>
-            <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+            <hr className=" my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
             <Carousel />
-            <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+            <hr className=" my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
             <Banner />
-            <Footer />
         </>
     );
 }

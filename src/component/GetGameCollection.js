@@ -16,13 +16,11 @@ export default async function GetGameCollection({ game, handleDelete }) {
       <GameImage game={game} />
       <Link
         href={`/collection/game/${game.game_title}/${game.api_id}`}
-        className="justify-self-center text-sm font-bold font-serif mt-2 hover:text-blue-300"
+        className="justify-self-center text-sm mt-2 hover:text-blue-300"
       >
         {game.game_title}
       </Link>
-      <h2 className=" justify-self-end text-sm font-bold font-serif">
-        ({game.condition})
-      </h2>
+      <h2 className=" justify-self-end text-sm">({game.condition})</h2>
       <DeleteButton game={game} handleDelete={handleDelete} />
       {/* <div></div>
             <button className="bg-orange-500 text-white border-2 border-black hover:bg-orange-600 hover:text-black transition-colors underline absolute">
