@@ -2,17 +2,18 @@ import { getListings } from "@/lib/actions";
 import "@/app/marketplace/marketplace.css";
 import { apiBoardGame } from "@/lib/apiCall";
 
+
 // import { auth } from "@clerk/nextjs";
 import { db } from "@/lib/db";
 
 export default async function individualListing({ params }) {
-  "use server";
-  // const { userId } = auth();
-  //  db query to GET all profile info from profiles table.
-  // const profileRes = await db.query(`SELECT * FROM profiles
-  //   WHERE clerk_user_id = ${userId}`);
-  // const profile_username = profileRes.rows[0].username;
-  // const profile_id = profileRes.rows[0].profile_id;
+    "use server";
+    // const { userId } = auth();
+    //  db query to GET all profile info from profiles table.
+    // const profileRes = await db.query(`SELECT * FROM profiles
+    //   WHERE clerk_user_id = ${userId}`);
+    // const profile_username = profileRes.rows[0].username;
+    // const profile_id = profileRes.rows[0].profile_id;
 
   const apiId = await db.query(
     `SELECT api_id from marketplace WHERE marketplace.id = $1`,
