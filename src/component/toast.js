@@ -5,8 +5,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./toast.css";
 
-export function ToastApp() {
-    const notify = () => toast("Notification notice");
+export function ToastApp({ children }) {
+    const notify = () => toast({ children });
 
     return (
         <div>
