@@ -8,8 +8,13 @@ export default function Header() {
   return (
     <section>
       <div className="headersection">
-        <Image className="logo" src={logo} alt="boardgame friends logo" />
-        <h1>Board Game Friends</h1>
+        <Link href="/">
+          <Image className="logo" src={logo} alt="boardgame friends logo" />
+        </Link>
+        <Link href="/">
+          <h1 className="bgf">Board Game Friends</h1>
+        </Link>
+
         <nav className="headernav">
           <Link href="/">Home</Link>
           <Link href="/collection">My Collection</Link>

@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={montserrat.className}>
+        <body className="">
           <Header />
           <div className="user">
             {userId && <UserButton afterSignOutUrl="/" />}

@@ -21,8 +21,8 @@ section {
 h1 {
   display: flex;
   text-align: center;
-  align-items: center;
   color: #f0f8ff;
+  margin-top: 0.5rem;
 }
 h4,
 h5 {

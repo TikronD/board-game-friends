@@ -28,7 +28,7 @@ export default async function Home() {
         Experience buying and selling YOUR board games with our unique method:
         store your collection upon account creation, sell items to the
         marketplace anytime, and never miss out on a game again - simply add
-        desired titles to your wishlist and get notified upon availability!"
+        desired titles to your wishlist and get notified upon availability!
       </p>
       <hr className="my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
       <Carousel />
