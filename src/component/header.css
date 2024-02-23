@@ -34,14 +34,12 @@ h5 {
 nav {
   align-items: center;
   z-index: 1;
-  /* color: #f0f8ff; */
   display: flex;
   gap: 2rem;
   font-size: 15px;
 }
 
 nav a {
-  /* color: #f0f8ff; */
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
@@ -50,7 +48,7 @@ a:hover {
   color: rgb(202, 197, 197);
 }
 
-@media (max-width: 940px) {
+@media (max-width: 1050px) {
   nav a {
     display: none;
   }
