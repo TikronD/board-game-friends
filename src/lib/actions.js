@@ -25,9 +25,9 @@ export async function handleSubmitListing(profile_id, formData) {
   const condition = formData.get("condition");
   const extras = formData.get("extras");
   // const apiTitle = gameTitle.replace(" ", "+");
-  console.log(gameTitle, gameTitle.replaceAll(" ", "+"));
+
   const api = await apiSearchStrict(gameTitle);
-  console.log(api[0].$.id);
+
   const id = api[0].$.id;
   await db.query(
     `INSERT INTO marketplace (user_id, game_title, price, description, condition, extras, api_id)

@@ -23,46 +23,50 @@ export default async function Marketplace({ handleSubmitListing }) {
 
     // const { listings, profile_id } = fetchData();
 
+    // .listingCard {
+    //   background-color: #ff914d;
+    //   width: 250px;
+    //   height: max-content;
+    //   margin: 10px;
+    //   display: flex;
+    //   padding: 5px;
+    //   border-radius: 5px;
+    //   justify-content: space-between;
+    // }
+
     return (
         <div className="grid" style={{ gridTemplateColumns: "1fr 2fr" }}>
-            <NewMarketplaceListingForm profile_id={profile_id} />
-            <div className="flex flex-col items-center justify-center gap-4">
-                {listings.rows.map(async (listing) => {
-                    console.log(listing.api_id);
-                    let src = await apiBoardGame(listing.api_id);
-                    return (
-                        <div
-                            className="flex gap-4 w-[80%] border-2 border-[#363E55] rounded-2xl"
-                            key={listing.id}
-                        >
-                            <div
-                                className="grid w-full"
-                                style={{ gridTemplateColumns: "80px 1fr" }}
-                            >
-                                <img
-                                    className="h-20 rounded-tl-xl rounded-bl-xl "
-                                    alt="Boardgame Image"
-                                    src={src.image[0]}
-                                />
+            <NewListingFormBtn profile_id={profile_id} />
+            <div className="flex place-content-left">
+                <div className="flex flex-col w-[70%] m-2 p-2 border-2 border-[#363e55] border-solid rounded-md ">
+                    {listings.rows.map(async (listing) => {
+                        let src = await apiBoardGame(listing.api_id);
+                        return (
+                            <Link href={`/marketplace/listing/${listing.id}`}>
                                 <div
-                                    className="grid w-full"
-                                    style={{
-                                        gridTemplateColumns: "1fr 1fr 1fr",
-                                    }}
+                                    className="flex m-1 justify-between"
+                                    style={{ height: "max-content" }}
+                                    key={listing.id}
                                 >
-                                    <p>£{listing.price}</p>
-                                    <Link
-                                        href={`/marketplace/listing/${listing.id}`}
-                                        className=""
-                                    >
-                                        <h3>{listing.game_title}</h3>
-                                    </Link>
-                                    <p>{listing.condition}</p>
+                                    <div className="flex w-full justify-between pr-2 items-center rounded-md bg-[#F0F8FF]">
+                                        <img
+                                            className="w-[70px] h-[70px] rounded-md"
+                                            src={src.image[0]}
+                                        />
+                                        <h3>
+                                            {listing.game_title}{" "}
+                                            <span className="mr-2"></span>£
+                                            {listing.price}
+                                        </h3>
+
+                                        <p>{listing.condition}</p>
+                                    </div>
+                                    <div className="flex"></div>
                                 </div>
-                            </div>
-                        </div>
-                    );
-                })}
+                            </Link>
+                        );
+                    })}
+                </div>
             </div>
         </div>
     );
