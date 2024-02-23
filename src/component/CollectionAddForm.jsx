@@ -32,7 +32,6 @@ export default function CollectionAddForm({ api, handleSubmit }) {
             />
             <datalist id="nameList" name="nameList">
               {data.map((item) => {
-                // console.log(JSON.stringify(item));
                 i++;
                 return (
                   <option
