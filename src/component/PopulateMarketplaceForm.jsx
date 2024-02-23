@@ -53,8 +53,8 @@ export default function populateMarketplaceForm() {
         <textarea
           name="description"
           id="description"
-          cols="20"
-          rows="5"
+          cols="10"
+          rows="3"
           required
           placeholder="Description"
         ></textarea>
