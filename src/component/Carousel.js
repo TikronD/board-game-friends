@@ -11,12 +11,13 @@ import bg9 from "@/../public/images/example-images/bg9.jpg";
 import "./carousel.css";
 import { db } from "@/lib/db";
 import Link from "next/link";
+import { apiBoardGame } from "@/lib/apiCall";
 
 const images = [bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8, bg9];
 
 export default async function Carousel() {
   const listings = await db.query(
-    `SELECT game_title, price from marketplace LIMIT 9`
+    `SELECT game_title, price, api_id from marketplace LIMIT 9`
   );
 
   const doubleListings = [...listings.rows, ...listings.rows];
@@ -25,15 +26,16 @@ export default async function Carousel() {
       <h2 id="marketplace-highlights">Marketplace Highlights</h2>
       <div className="slider">
         <div className="slide-track">
-          {doubleListings.map((game, index) => {
+          {doubleListings.map(async (game, index) => {
+            const boardGameData = await apiBoardGame(game.api_id);
             return (
               <div className="slide" key={index}>
-                <Image
+                <img
                   className="image"
-                  src={images[index % images.length]}
+                  src={boardGameData.image[0]}
                   alt={`board-game${index + 1}`}
                 />
-                <h3>{game.game_title}</h3>
+                <h3 className="game-title-carousel">{game.game_title}</h3>
                 <p className="price">£{game.price}</p>
               </div>
             );

@@ -1,10 +1,11 @@
-/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react/jsx-key */
 import { db } from "@/lib/db";
 import "./wishlist.css";
 import { auth } from "@clerk/nextjs";
 import { revalidatePath } from "next/cache";
 import apiCall, { apiBoardGame, apiSearchStrict } from "@/lib/apiCall";
 import WishlistForm from "./WishlistForm.jsx";
+import Link from "next/link";
 
 export default async function Wishlist() {
     const api = await apiCall();
@@ -20,7 +21,7 @@ export default async function Wishlist() {
     const id = idQuery.rows[0].id;
 
     const marketplaceData = await db.query(
-        `SELECT game_title, price from marketplace`
+        `SELECT game_title, price, api_id from marketplace`
     );
 
     const wishlistData = await db.query(
@@ -73,13 +74,12 @@ export default async function Wishlist() {
                     {wishlistData.rows.map(async (game) => {
                         const boardGameData = await apiBoardGame(game.api_id);
                         return (
-                            <div key={id}>
+                            <div>
                                 <div
                                     className="your-wishlist"
                                     key={game.game_title + game.price_max}
                                 >
                                     <img
-                                        alt="Boardgame Image"
                                         className="wishlist-img"
                                         src={boardGameData.image[0]}
                                     />
@@ -105,12 +105,17 @@ export default async function Wishlist() {
             <div className="format">
                 <h2 className="wishlist-title">Marketplace Matches</h2>
                 <div className="your-wishlist-container match-container">
-                    {matches.map((game) => {
+                    {matches.map(async (game) => {
+                        const boardGameData = await apiBoardGame(game.api_id);
                         return (
                             <div
                                 className="matches"
                                 key={game.game_title + game.price}
                             >
+                                <img
+                                    className="wishlist-img"
+                                    src={boardGameData.image[0]}
+                                />
                                 <h3>
                                     <strong>{game.game_title}</strong>
                                 </h3>

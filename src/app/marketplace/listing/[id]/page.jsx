@@ -1,5 +1,6 @@
 import { getListings } from "@/lib/actions";
 import { auth } from "@clerk/nextjs";
+// import { db } from "@/lib/db";
 
 export default async function individualListing({ params }) {
   "use server";
@@ -11,8 +12,6 @@ export default async function individualListing({ params }) {
   // const profile_id = profileRes.rows[0].profile_id;
 
   const listings = await getListings(params.id);
-
-  console.log(listings);
 
   return (
     <div className="listingContainer">

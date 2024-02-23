@@ -1,8 +1,6 @@
 import { db } from "../lib/db";
 import { auth } from "@clerk/nextjs";
 import Link from "next/link";
-
-import Footer from "@/component/Footer";
 import Carousel from "@/component/Carousel";
 import Banner from "@/component/Banner";
 
