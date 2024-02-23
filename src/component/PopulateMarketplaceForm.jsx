@@ -21,7 +21,6 @@ export default function populateMarketplaceForm() {
   async function handleChange(event) {
     const name = event.target.value;
     const apiData = await apiSearch(name);
-    console.log(apiData);
     if (apiData != undefined) {
       setData(apiData);
     }
@@ -53,8 +52,8 @@ export default function populateMarketplaceForm() {
         <textarea
           name="description"
           id="description"
-          cols="20"
-          rows="5"
+          cols="10"
+          rows="3"
           required
           placeholder="Description"
         ></textarea>
