@@ -30,9 +30,9 @@ export default async function Home() {
         marketplace anytime, and never miss out on a game again - simply add
         desired titles to your wishlist and get notified upon availability!"
       </p>
-      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+      <hr className="my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
       <Carousel />
-      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+      <hr className="my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
       <Banner />
     </>
   );

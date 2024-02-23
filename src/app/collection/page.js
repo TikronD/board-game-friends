@@ -8,7 +8,7 @@ export default async function CollectionPage() {
     "SELECT collection.api_id, collection.id AS game_id, collection.game_title, collection.condition, collection.price_paid, profiles.id FROM collection JOIN profiles ON collection.user_id = profiles.id ORDER BY collection.game_title"
   );
   return (
-    <div className="flex flex-col gap-4 mt-4 mb-8 justify-center items-center">
+    <div className="flex flex-col gap-2 mt-4 mb-8 justify-center items-center border-2 border-[#363e55] border-solid m-4 rounded-md p-2">
       <Link
         href="./collection/add"
         className="bg-[#ff914d] border-2 border-black text-white hover:text-[#F0F8FF] transition-colors absolute top-20 right-5 p-2"

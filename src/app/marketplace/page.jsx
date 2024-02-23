@@ -21,27 +21,49 @@ export default async function Marketplace({ handleSubmitListing }) {
 
   // const { listings, profile_id } = fetchData();
 
+  // .listingCard {
+  //   background-color: #ff914d;
+  //   width: 250px;
+  //   height: max-content;
+  //   margin: 10px;
+  //   display: flex;
+  //   padding: 5px;
+  //   border-radius: 5px;
+  //   justify-content: space-between;
+  // }
+
   return (
     <>
       <NewListingFormBtn profile_id={profile_id} />
-      <div className="listingArea">
-        {listings.rows.map(async (listing) => {
-          let src = await apiBoardGame(listing.api_id);
-          return (
-            <Link href={`/marketplace/listing/${listing.id}`}>
-              <div className="listingCard" key={listing.id}>
-                <div className="listingInfo">
-                  <h3>{listing.game_title}</h3>
-                  <p>£{listing.price}</p>
-                  <p>{listing.condition}</p>
+      <div className="flex place-content-center">
+        <div className="flex flex-col w-[70%] m-2 p-2 border-2 border-[#363e55] border-solid rounded-md ">
+          {listings.rows.map(async (listing) => {
+            let src = await apiBoardGame(listing.api_id);
+            return (
+              <Link href={`/marketplace/listing/${listing.id}`}>
+                <div
+                  className="flex m-1 justify-between"
+                  style={{ height: "max-content" }}
+                  key={listing.id}
+                >
+                  <div className="flex w-full justify-between pr-2 items-center rounded-md bg-[#F0F8FF]">
+                    <img
+                      className="w-[70px] h-[70px] rounded-md"
+                      src={src.image[0]}
+                    />
+                    <h3>
+                      {listing.game_title} <span className="mr-2"></span>£
+                      {listing.price}
+                    </h3>
+
+                    <p>{listing.condition}</p>
+                  </div>
+                  <div className="flex"></div>
                 </div>
-                <div className="imgContainer">
-                  <img className="listingImg" src={src.image[0]} />
-                </div>
-              </div>
-            </Link>
-          );
-        })}
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </>
   );

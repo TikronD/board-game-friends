@@ -53,7 +53,7 @@ export default async function Profile() {
                     <h4>{`Location: ${user.rows[0].location}`}</h4>
                   </div>
                   <Link href="/">
-                    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+                    <hr ="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
                     <p>Back</p>
                   </Link>
                   {/* <Link href="/pages/marketplace">
