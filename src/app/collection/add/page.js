@@ -6,6 +6,7 @@ import FormLoad from "@/component/FormLoad";
 import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 import Link from "next/link";
 import xml2js from "xml2js";
 
@@ -48,5 +49,6 @@ export default async function AddCollection() {
       }
     });
     revalidatePath("/collection");
+    redirect("/collection");
   }
 }

@@ -14,6 +14,7 @@ export default function NewListingFormBtn({ profile_id }) {
   return (
     <>
       <div className="marketplaceHeader">
+        <h2 className="Marketplace-Header">Marketplace</h2>
         <button
           className="listingBtn"
           onClick={() => {

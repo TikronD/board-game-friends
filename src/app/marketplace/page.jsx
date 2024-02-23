@@ -53,12 +53,12 @@ export default async function Marketplace({ handleSubmitListing }) {
                       className="w-[70px] h-[70px] rounded-md"
                       src={src.image[0]}
                     />
-                    <h3>
-                      {listing.game_title} <span className="mr-2"></span>£
+                    <h3 className="w-1/6">
+                      {listing.game_title} <span className="mr-2 "></span>£
                       {listing.price}
                     </h3>
 
-                    <p>{listing.condition}</p>
+                    <p className="w-1/6">{listing.condition}</p>
                   </div>
                   <div className="flex"></div>
                 </div>
@@ -67,6 +67,6 @@ export default async function Marketplace({ handleSubmitListing }) {
           })}
         </div>
       </div>
-    </div>
+    </>
   );
 }
