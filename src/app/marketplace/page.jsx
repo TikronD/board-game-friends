@@ -66,8 +66,10 @@ export default async function Marketplace({ handleSubmitListing }) {
                             </Link>
                         );
                     })}
+
                 </div>
             </div>
         </div>
     );
+
 }
