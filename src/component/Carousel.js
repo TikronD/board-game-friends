@@ -17,29 +17,23 @@ import CarouselMap from "./CarouselMap";
 const images = [bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8, bg9];
 
 export default async function Carousel() {
-    const listings = await db.query(
-        `SELECT game_title, price, api_id, id from marketplace LIMIT 9`
-    );
+  const listings = await db.query(
+    `SELECT game_title, price, api_id, id from marketplace LIMIT 9`
+  );
 
-    const doubleListings = [...listings.rows, ...listings.rows];
-    return (
-        <div>
-            <h2 id="marketplace-highlights">Marketplace Highlights</h2>
-            <div className="slider">
-                <div className="slide-track">
-                    {doubleListings.map((game, index) => {
-                        return (
-                            <CarouselMap
-                                key={index}
-                                game={game}
-                                index={index}
-                            />
-                        );
-                    })}
-                </div>
-            </div>
+  const doubleListings = [...listings.rows, ...listings.rows];
+  return (
+    <div>
+      <h2 id="marketplace-highlights">Marketplace Highlights</h2>
+      <div className="slider">
+        <div className="slide-track">
+          {doubleListings.map((game, index) => {
+            return <CarouselMap key={index} game={game} index={index} />;
+          })}
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 /* <div className="slide">

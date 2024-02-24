@@ -1,11 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
 import { db } from "@/lib/db";
 import Link from "next/link";
 import NewListingFormBtn from "@/component/NewListingFormBtn.jsx";
 import "@/app/marketplace/marketplace.css";
 import { auth } from "@clerk/nextjs";
 import { apiBoardGame } from "@/lib/apiCall";
-import NewMarketplaceListingForm from "@/component/NewMarketplaceListingForm";
 
 export default async function Marketplace({ handleSubmitListing }) {
   // const fetchData = async () => {
@@ -67,6 +65,6 @@ export default async function Marketplace({ handleSubmitListing }) {
           })}
         </div>
       </div>
-    </div>
+    </>
   );
 }
